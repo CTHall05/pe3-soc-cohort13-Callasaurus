@@ -21,7 +21,9 @@ export default function Dashboard() {
             <img className='dashboard-images' src={newsimagefour} alt=''/>
         </div>
         <div className='card container'>
-            
+             <div>
+                
+             </div>
         </div>
     </div>
   ]
