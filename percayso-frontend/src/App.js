@@ -1,9 +1,19 @@
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from './Components/Dashboard/Dashboard';
+import Search from './Components/Search/Search';
+import Trending from './Components/Trending/Trending';
 
 function App() {
   return (
-    <div className="App">
-      <h1> Hello World!</h1>
+    <div className='App'>
+      <Router basename='/'>
+        <Routes>
+          <Route exact path='/' element={<Dashboard />} />
+          <Route path='/search' element={<Search />} />
+          <Route path='/trending' element={<Trending />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
