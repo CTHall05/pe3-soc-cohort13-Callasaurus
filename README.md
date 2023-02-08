@@ -4,7 +4,7 @@
 
 For my solution, I've used React, JavaScript and Cypress. The motivation for using the tech stack is: I have a lot of experience using React and JS and I know that this combination would allow me to create a fast single-page application with a nice and sleek UI. I've used Cypress for testing as it's an accessible tool that allows you to have confidence that your pages are mounting correctly, and that your API calls are working and the data they return is being rendered properly on screen. 
 
-Within React, I've used packages such as 'react-router-dom', 'reactjs-popup', 'react-social-icons'. Packages such as these can provide subtle by beneficial impacts on the user experience. 
+Within React, I've used packages such as 'react-router-dom', 'reactjs-popup', 'react-social-icons'. Packages such as these can provide subtle but beneficial impacts on the user experience. 
 
 I would have liked to implement pagination within the app, however the free tier of the API only allows for a maximum of 10 articles to be returned and you are limited to 100 API calls per day. This is something I would look to do to improve the app.
 
