@@ -6,6 +6,8 @@ For my solution, I've used React, JavaScript and Cypress. The motivation for usi
 
 Within React, I've used packages such as 'react-router-dom', 'reactjs-popup', 'react-social-icons'. Packages such as these can provide subtle by beneficial impacts on the user experience. 
 
+I would have liked to implement pagination within the app, however the free tier of the API only allows for a maximum of 10 articles to be returned and you are limited to 100 API calls per day. This is something I would look to do to improve the app.
+
 ## Application features 
 
 - A landing page dashboard that gives the user an overview of what they can expect in the app and a way to access all features
