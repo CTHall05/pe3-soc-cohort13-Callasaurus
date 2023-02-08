@@ -5,6 +5,7 @@ import gnewslogo from '../../Images/gnewslogo.png'
 
 export default function Navbar() {
 
+    // using the React router to allow for users to go between different pages, which can be done by clicking on the appropriate buttons in the navbar
     const navigate = useNavigate();
 
     const navigateDashboard = () => {

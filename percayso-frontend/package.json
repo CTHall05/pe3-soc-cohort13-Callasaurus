@@ -9,8 +9,11 @@
     "dotenv": "^16.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
+    "react-social-icons": "^5.15.0",
+    "reactjs-popup": "^2.0.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

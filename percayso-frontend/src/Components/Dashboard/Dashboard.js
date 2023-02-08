@@ -1,6 +1,7 @@
 import React from 'react'
 import './Dashboard.css'
 import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer/Footer';
 import { useNavigate } from "react-router-dom";
 import newsimageone from '../../Images/newsimageone.jpg'
 import newsimagetwo from '../../Images/newsimagetwo.jpg'
@@ -43,35 +44,36 @@ export default function Dashboard() {
                         <img src={search} alt='' />
                     </div>
                     <div className='card-bottom'>
-                        <p> You can use our search feature to find relevant and fitting news for your needs. 
-                        Simply type in what you want and browse through our optimised search results. </p>
+                        <p> You can use our search feature to find relevant and fitting news for your needs.
+                            Simply type in what you want and browse through our optimised search results. </p>
                     </div>
                 </div>
                 <div onClick={navigateTrending} className='component-cards'>
-                <div className='card-header'>
+                    <div className='card-header'>
                         <h2> Find trending articles </h2>
                     </div>
                     <div className='card-main'>
                         <img src={trending} alt='' />
                     </div>
                     <div className='card-bottom'>
-                    <p> We have trending articles across a wide variety of different news categories. 
-                        Find the most customised, popular, relevant and impactful news with ease. </p>
+                        <p> We have trending articles across a wide variety of different news categories.
+                            Find the most customised, popular, relevant and impactful news with ease. </p>
                     </div>
                 </div>
                 <div onClick={() => { window.open("https://gnews.io/", "_blank").focus(); }} className='component-cards'>
-                <div className='card-header'>
+                    <div className='card-header'>
                         <h2> Discover GNews </h2>
                     </div>
                     <div className='card-main'>
                         <img src={news} alt='' />
                     </div>
                     <div className='card-bottom'>
-                        <p> We are powered by GNews. GNews allows us to search for current and historic 
-                        news articles  and collect the current top headlines articles based on Google News rankings. </p>
+                        <p> We are powered by GNews. GNews allows us to search for current and historic
+                            news articles  and collect the current top headlines articles based on Google News rankings. </p>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>,
+        <Footer />
     ]
 }
