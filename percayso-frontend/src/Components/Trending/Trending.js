@@ -3,7 +3,7 @@ import './Trending.css'
 import NewsCard from '../NewsCard/NewsCard'
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
-import { dummydata } from '../../data'
+// import { dummydata } from '../../data'
 
 const APIKEY = process.env.REACT_APP_APIKEY
 
@@ -16,18 +16,18 @@ export default function Trending() {
     const [language, setLanguage] = useState('en')
     const [country, setCountry] = useState('us')
     const [category, setCategory] = useState('general')
-    const [articles, setArticles] = useState(dummydata)
+    const [articles, setArticles] = useState([])
 
     // useEffect calling the API and returning some of the 'general' articles so something is displayed on page load 
-    // useEffect(() => {
-    //     async function getExampleArticles() {
-    //         const examples = await fetch(`https://gnews.io/api/v4/search?q=example&apikey=${APIKEY}&lang=en&country=us&max=10`);
-    //         const data = await examples.json();
-    //         console.log(data)
-    //         setArticles(data.articles)
-    //     }
-    //     getExampleArticles();
-    // }, [])
+    useEffect(() => {
+        async function getExampleArticles() {
+            const examples = await fetch(`https://gnews.io/api/v4/search?q=example&apikey=${APIKEY}&lang=en&country=us&max=10`);
+            const data = await examples.json();
+            console.log(data)
+            setArticles(data.articles)
+        }
+        getExampleArticles();
+    }, [])
 
     // Category preference, language preference and country preference are plugges into the url for the API call
     async function getTrendingArticles() {

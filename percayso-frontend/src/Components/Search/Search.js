@@ -3,7 +3,7 @@ import './Search.css'
 import NewsCard from '../NewsCard/NewsCard'
 import Footer from '../Footer/Footer'
 import Navbar from '../Navbar/Navbar'
-import { dummydata } from '../../data'
+// import { dummydata } from '../../data'
 
 const APIKEY = process.env.REACT_APP_APIKEY
 
@@ -15,20 +15,20 @@ functionality that lets the user choose a country and language for the articles 
 export default function Search() {
 
     const [input, setInput] = useState('')
-    const [articles, setArticles] = useState(dummydata)
+    const [articles, setArticles] = useState([])
     const [language, setLanguage] = useState('en')
     const [country, setCountry] = useState('us')
 
     // useEffect calling the API and returning some of the 'general' articles so something is displayed on page load 
-    // useEffect(() => {
-    //     async function getExampleArticles() {
-    //         const examples = await fetch(`https://gnews.io/api/v4/search?q=example&apikey=${APIKEY}&lang=en&country=us&max=10`);
-    //         const data = await examples.json();
-    //         console.log(data)
-    //         setArticles(data.articles)
-    //     }
-    //     getExampleArticles();
-    // }, [])
+    useEffect(() => {
+        async function getExampleArticles() {
+            const examples = await fetch(`https://gnews.io/api/v4/search?q=example&apikey=${APIKEY}&lang=en&country=us&max=10`);
+            const data = await examples.json();
+            console.log(data)
+            setArticles(data.articles)
+        }
+        getExampleArticles();
+    }, [])
 
     // Function that is tracking user input and then updating the input state with it. This is then plugged into the url for the API call to get back customised content
     function handleChange(e) {
