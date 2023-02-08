@@ -87,3 +87,16 @@
   font-size: larger;
   width: 90%;
 }
+
+@media (max-width: 1150px) {
+  .card-container {
+    flex-direction: column;
+  }
+  .component-cards {
+    width: 80%;
+    height: 500px;
+  }
+  .dashboard-header {
+    text-align: center;
+  }
+}

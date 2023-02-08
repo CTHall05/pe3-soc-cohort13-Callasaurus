@@ -2,6 +2,12 @@ import React from 'react'
 import './NewsCard.css'
 import Popup from "reactjs-popup";
 
+/* 
+As I'm displaying news articles across two components, I've made a NewsCard component that can be re-used in both the 
+Search and Trending component. This component is handed down an array of news articles as props, and displays the information
+in individual cards. For a nicer user experience, I've added a pop-up to each card that allows the user to read more and find 
+the link to the original article.
+*/
 
 export default function NewsCard(props) {
 
@@ -13,7 +19,6 @@ export default function NewsCard(props) {
     }
   };
 
-  // The data from the API is mapped and inserted into each card. There is also a pop up giving the user the option to read more and visit the original news site
   return (
     <div className='news-cards'>
       <div className='news-card-header'>

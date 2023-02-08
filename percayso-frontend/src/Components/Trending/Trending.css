@@ -24,3 +24,33 @@
 .trending-button:hover {
   background-color: #5e949c;
 }
+
+.dropdown-container-trending {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 20px;
+  width: 100%;
+}
+
+.country-lang-options-trending {
+  width: 345px;
+  border-radius: 5px;
+  height: 40px;
+  font-size: larger;
+}
+
+@media (max-width: 1350px) {
+  .dropdown-container-trending {
+    display: flex;
+    flex-direction: column;
+  }
+  .country-lang-options-trending {
+    width: 80%;
+  }
+  .trending-header {
+    text-align: center;
+  }
+}

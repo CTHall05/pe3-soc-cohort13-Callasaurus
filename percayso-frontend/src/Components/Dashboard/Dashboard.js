@@ -11,6 +11,11 @@ import news from '../../Images/news.png'
 import trending from '../../Images/trending.png'
 import search from '../../Images/search.png'
 
+/* 
+I wanted to create a dashboard landing page to give a nice user experience. Images are displayed and a brief description of 
+what the user can do and expect on the site is given. Cards are used to allow users to navigate throughout the site. 
+*/
+
 export default function Dashboard() {
 
     const navigate = useNavigate();

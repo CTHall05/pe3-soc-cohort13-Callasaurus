@@ -54,3 +54,19 @@
 .gnews-icon:hover {
   cursor: pointer;
 }
+
+@media (max-width: 600px) {
+  .navbar-links {
+    font-size: smaller;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .navbar-container {
+    height: 120px
+  }
+  .gnews-icon {
+    height: 20%;
+    margin-left: 10px;
+  }
+
+}

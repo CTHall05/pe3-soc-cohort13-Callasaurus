@@ -70,3 +70,34 @@
   width: 90%;
   gap: 20px;
 }
+
+@media (max-width: 1150px) {
+  .articles-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 800px) {
+  .search-input input {
+    width: 60%;
+    height: 50px;
+  }
+  
+  .search-input button {
+    width: 20%;
+    height: 50px;
+  }
+
+  .dropdown-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .country-lang-options {
+    width: 80%;
+  }
+
+  .search-header h1 {
+    text-align: center;
+  }
+}

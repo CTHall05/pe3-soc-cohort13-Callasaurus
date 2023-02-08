@@ -7,6 +7,11 @@ import { dummydata } from '../../data'
 
 const APIKEY = process.env.REACT_APP_APIKEY
 
+/* 
+This component allows the user to search for specific news articles. Using the GNews API documentation, I've also implemented 
+functionality that lets the user choose a country and language for the articles they want to be retuned. 
+*/
+
 export default function Search() {
 
     const [input, setInput] = useState('')
@@ -31,6 +36,7 @@ export default function Search() {
         console.log(input)
     }
 
+    // User input, language preference and country preference are plugges into the url for the API call
     async function getArticlesBySearch() {
         const examples = await fetch(`https://gnews.io/api/v4/search?q=${input}&apikey=${APIKEY}&lang=${language}&country=${country}&max=10`);
         const data = await examples.json();
@@ -38,6 +44,7 @@ export default function Search() {
         setInput('')
     }
 
+    // Function that updates the state of the language based on what is chosen in the language dropdown
     function chooseLanguage(e) {
         if (e.target.value === 'en') {
             setLanguage('en')
@@ -52,6 +59,7 @@ export default function Search() {
         }
     }
 
+    // Function that updates the state of the country based on what is chosen in the country dropdown
     function chooseCountry(e) {
         if (e.target.value === 'gb') {
             setCountry('gb')
@@ -65,8 +73,8 @@ export default function Search() {
             setCountry('es')
         } if (e.target.value === 'it') {
             setCountry('it')
+        }
     }
-}
 
     return [
         <Navbar />,
@@ -75,36 +83,36 @@ export default function Search() {
                 <h1> Search for news in a number of countries and languages. </h1>
             </div>
             <div className='dropdown-container'>
-                    <select className='country-lang-options' onChange={chooseLanguage}>
-                        <option> Choose language... </option>
-                        <option value='en'> English </option>
-                        <option value='fr'> French </option>
-                        <option value='de'> German </option>
-                        <option value='es'> Spanish </option>
-                        <option value='it'> Italian </option>
-                    </select>
-                    <select className='country-lang-options' onChange={chooseCountry}>
-                        <option> Choose country... </option>
-                        <option value='gb'> England </option>
-                        <option value='us'> US </option>
-                        <option value='fr'> France </option>
-                        <option value='de'> Germany </option>
-                        <option value='es'> Spain </option>
-                        <option value='it'> Italy </option>
-                    </select>
+                <select className='country-lang-options' onChange={chooseLanguage}>
+                    <option> Choose language... </option>
+                    <option value='en'> English </option>
+                    <option value='fr'> French </option>
+                    <option value='de'> German </option>
+                    <option value='es'> Spanish </option>
+                    <option value='it'> Italian </option>
+                </select>
+                <select className='country-lang-options' onChange={chooseCountry}>
+                    <option> Choose country... </option>
+                    <option value='gb'> England </option>
+                    <option value='us'> US </option>
+                    <option value='fr'> France </option>
+                    <option value='de'> Germany </option>
+                    <option value='es'> Spain </option>
+                    <option value='it'> Italy </option>
+                </select>
             </div>
             <div className='search-input'>
                 <input onChange={handleChange} value={input} />
                 <button onClick={getArticlesBySearch}> Search </button>
             </div>
-            
-           
+
+
             <ul className='articles-container'>
                 {articles.map((item) => {
                     return (<NewsCard title={item.title} image={item.image} description={item.description} content={item.content} url={item.url} />)
                 })}
             </ul>
-            
+
         </div>,
         <Footer />
     ]

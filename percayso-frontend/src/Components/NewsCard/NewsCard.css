@@ -106,3 +106,10 @@
   width: 70%;
   font-size: xx-large;
 }
+
+@media (max-width: 1150px) {
+  .news-cards {
+    width: 80%;
+  }
+}
+

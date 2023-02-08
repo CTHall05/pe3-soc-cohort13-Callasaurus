@@ -3,9 +3,10 @@ import './Navbar.css'
 import { useNavigate } from "react-router-dom";
 import gnewslogo from '../../Images/gnewslogo.png'
 
+/* I've added a navbar across the app so users can easily and quickly navigate to where they want to go. */
+
 export default function Navbar() {
 
-    // using the React router to allow for users to go between different pages, which can be done by clicking on the appropriate buttons in the navbar
     const navigate = useNavigate();
 
     const navigateDashboard = () => {
@@ -22,7 +23,7 @@ export default function Navbar() {
 
     return (
         <div className='navbar-container'>
-        <img onClick={() => {window.open("https://gnews.io/", "_blank").focus();}} className='gnews-icon' src={gnewslogo} alt=''/>
+            <img onClick={() => { window.open("https://gnews.io/", "_blank").focus(); }} className='gnews-icon' src={gnewslogo} alt='' />
             <div className='navbar-links'>
                 <button onClick={navigateDashboard}> Dashboard </button>
                 <button onClick={navigateSearch}> Search for news</button>

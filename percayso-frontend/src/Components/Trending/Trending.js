@@ -7,6 +7,11 @@ import { dummydata } from '../../data'
 
 const APIKEY = process.env.REACT_APP_APIKEY
 
+/* 
+This component allows the user to search for specific trending news articles. Using the GNews API documentation, I've also 
+implemented functionality that lets the user choose a country, language and category for the articles they want to be retuned. 
+*/
+
 export default function Trending() {
     const [language, setLanguage] = useState('en')
     const [country, setCountry] = useState('us')
@@ -24,13 +29,14 @@ export default function Trending() {
     //     getExampleArticles();
     // }, [])
 
+    // Category preference, language preference and country preference are plugges into the url for the API call
     async function getTrendingArticles() {
         const examples = await fetch(`https://gnews.io/api/v4/top-headlines?category=${category}&lang=${language}&country=${country}&max=10&apikey=${APIKEY}`);
         const data = await examples.json();
         setArticles(data.articles)
     }
 
-
+    // Function that updates the state of the language based on what is chosen in the language dropdown
     function chooseLanguage(e) {
         if (e.target.value === 'en') {
             setLanguage('en')
@@ -45,6 +51,7 @@ export default function Trending() {
         }
     }
 
+    // Function that updates the state of the country based on what is chosen in the country dropdown
     function chooseCountry(e) {
         if (e.target.value === 'gb') {
             setCountry('gb')
@@ -61,6 +68,7 @@ export default function Trending() {
         }
     }
 
+    // Function that updates the state of the category based on what is chosen in the category dropdown
     function chooseCategory(e) {
         if (e.target.value === 'general') {
             setCategory('general')
@@ -81,16 +89,14 @@ export default function Trending() {
         }
     }
 
-    console.log(language, country, category)
-
     return [
         <Navbar />,
         <div className='trending-container'>
             <div className='trending-header'>
                 <h1> Find trending news by category, country and language. </h1>
             </div>
-            <div className='dropdown-container'>
-                <select className='country-lang-options' onChange={chooseLanguage}>
+            <div className='dropdown-container-trending'>
+                <select className='country-lang-options-trending' onChange={chooseLanguage}>
                     <option> Choose language... </option>
                     <option value='en'> English </option>
                     <option value='fr'> French </option>
@@ -98,7 +104,7 @@ export default function Trending() {
                     <option value='es'> Spanish </option>
                     <option value='it'> Italian </option>
                 </select>
-                <select className='country-lang-options' onChange={chooseCountry}>
+                <select className='country-lang-options-trending' onChange={chooseCountry}>
                     <option> Choose country... </option>
                     <option value='gb'> England </option>
                     <option value='us'> US </option>
@@ -107,7 +113,7 @@ export default function Trending() {
                     <option value='es'> Spain </option>
                     <option value='it'> Italy </option>
                 </select>
-                <select className='country-lang-options' onChange={chooseCategory}>
+                <select className='country-lang-options-trending' onChange={chooseCategory}>
                     <option> Choose category... </option>
                     <option value='general'> General </option>
                     <option value='world'> World </option>
