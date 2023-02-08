@@ -13,3 +13,24 @@ Within React, I've used packages such as 'react-router-dom', 'reactjs-popup', 'r
 - A search page functionality where users can search for and see articles in different languages and countries 
 - A trending page functionality where users can search for and see articles by different categories in certain languages and countries 
 - Responsive CSS for smaller screen sizes 
+
+## Deployed link
+
+https://percayso-frontend-callasd.netlify.app
+
+## App demo 
+
+https://user-images.githubusercontent.com/112335053/217567258-5dbe28fa-ecab-4f4f-81e2-7c465fabc31c.mp4
+
+## Running the app locally 
+
+Running React:
+```
+npm i
+npm start
+```
+
+Testing:
+```
+npx cypress open
+```
