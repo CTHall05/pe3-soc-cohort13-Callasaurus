@@ -1,31 +1,15 @@
 # Percayso Programming Exercise 3
 
-## Brief
+## Solution 
 
-Create a website that gets news from the GNews api:
+For my solution, I've used React, JavaScript and Cypress. The motivation for using the tech stack is: I have a lot of experience using React and JS and I know that this combination would allow me to create a fast single-page application with a nice and sleek UI. I've used Cypress for testing as it's an accessible tool that allows you to have confidence that your pages are mounting correctly, and that your API calls are working and the data they return is being rendered properly on screen. 
 
-    https://gnews.io/?ref=apilist.fun
-    
-Your website must:    
-      
-  1) Include a search area
-  2) Include a results area
-  3) Include tests
-  4) Be hosted on a publicly accessible URL, so we can see it working
+Within React, I've used packages such as 'react-router-dom', 'reactjs-popup', 'react-social-icons'. Packages such as these can provide subtle by beneficial impacts on the user experience. 
 
-You are free to choose:
+## Application features 
 
-  1) How to style all aspects of the page.
-  2) What language and framework to use.
-
-We are looking to understand your approach to solving this problem as much as the actual technical solution. Add comments to your code to help us understand your thinking. 
-
-Googling syntax is allowed, googling solutions is not.
-
-## Submitting your solution
-
-Please commit your solution within the time frame given to you, even if your solution is not complete. We will be interested in seeing how you approached the problem.
-
-## Extra credit
-
-If you're in the mood for showboating, plese feel free to show us what else you can do. E.g. you could automate tests for your solution.
+- A landing page dashboard that gives the user an overview of what they can expect in the app and a way to access all features
+- A navbar for additional ease of routing throughout the app 
+- A search page functionality where users can search for and see articles in different languages and countries 
+- A trending page functionality where users can search for and see articles by different categories in certain languages and countries 
+- Responsive CSS for smaller screen sizes 
